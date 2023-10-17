@@ -84,11 +84,31 @@ class LinkedList {
     this.size--
     return current.data
     }
+  remove(data){
+    if(this.isEmpty()) return false
+    if(this.head.data === data) {
+      this.head = this.head.next
+      this.size --
+      return this
+    }
+    let current = this.head
+    while (current && current.next && current.next.data !== data) {
+      current = current.next
+    }
+    if (!current || !current.next) {
+      return false
+    }
+    current.next = current.next.next
+    this.size --
+    return this
+    }
 }
 const myList = new LinkedList();
 myList.append(7);
 myList.append(6);
 myList.prepend(8);
+myList.prepend(1);
 myList.insert(9, 0);
 myList.removeAt(3)
+myList.remove()
 console.log(myList.printList())
