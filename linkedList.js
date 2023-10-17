@@ -102,6 +102,11 @@ class LinkedList {
     this.size --
     return this
     }
+    getSize(){
+      let sizeArr = [...this.printList()]
+      let size = sizeArr.filter((e) => e !== " ")
+      return size.length
+    }
 }
 const myList = new LinkedList();
 myList.append(7);
@@ -110,5 +115,6 @@ myList.prepend(8);
 myList.prepend(1);
 myList.insert(9, 0);
 myList.removeAt(3)
-myList.remove()
+myList.remove(6)
+console.log(myList.getSize())
 console.log(myList.printList())
