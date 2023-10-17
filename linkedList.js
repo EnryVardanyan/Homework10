@@ -49,7 +49,7 @@ class LinkedList {
   }
   insert(data, index = -1){
     if(index < 0 || index > this.size) {
-      return this}
+      return false}
     if(index === 0) return this.prepend(data)
     if(index === this.size) return this.append(data)
     const newNode = new Node(data)
@@ -66,10 +66,29 @@ class LinkedList {
     this.size++
     return this
   }
+  removeAt(index){
+    if(index < 0 || index > this.size) return null
+    if(index === 0) {
+      const removedData = this.head.data;
+      this.head = this.head.next;
+      this.size--;
+      return removedData;
+    }
+    let current = this.head
+    let currentIdx = 0
+    while(currentIdx !== index - 1){
+        current = current.next
+        currentIdx++
+    } 
+    current.next = current.next.next
+    this.size--
+    return current.data
+    }
 }
 const myList = new LinkedList();
 myList.append(7);
 myList.append(6);
 myList.prepend(8);
 myList.insert(9, 0);
+myList.removeAt(3)
 console.log(myList.printList())
