@@ -23,9 +23,14 @@ class Stack {
     top(){
         return this.items[0]
     }
-    
+    getSize(){
+        return this.items.length
+    }
+
 }
 const node1 = new Node(10)
 const stack = new Stack()
 stack.push(node1)
+console.log(stack.getSize())
+
 console.log(stack)
