@@ -1,9 +1,3 @@
-class Node {
-    constructor(data){
-        this.data = data;
-        this.next = null 
-    }
-}
 class Stack {
     constructor(){
         this.items = []
@@ -28,9 +22,8 @@ class Stack {
     }
 
 }
-const node1 = new Node(10)
 const stack = new Stack()
-stack.push(node1)
+stack.push(6)
 console.log(stack.getSize())
 
 console.log(stack)
