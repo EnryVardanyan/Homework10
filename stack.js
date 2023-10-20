@@ -6,19 +6,24 @@ class Node {
 }
 class Stack {
     constructor(){
-        this.top = null
+        this.items = []
     }
     push(node){
-        if(this.isEmpty()) {
-            this.top = node
-            return this
-        }
-        this.top.next = this.top
-        this.top = node 
+        this.items.unshift(node)
     }
     isEmpty(){
-        return !this.top
+        return !this.items.length
     }
+    pop(){
+        if(this.isEmpty()){
+            return null
+        }
+        return this.items.shift()
+    }
+    top(){
+        return this.items[0]
+    }
+    
 }
 const node1 = new Node(10)
 const stack = new Stack()
