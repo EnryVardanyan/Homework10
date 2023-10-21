@@ -12,6 +12,7 @@ class Queue {
         return sliced
     }
     front(){
+        if(!this.items.length) return null
         return this.items[0]
     }
     isEmpty(){
@@ -25,4 +26,4 @@ const queue = new Queue()
 queue.enqueue(6)
 queue.enqueue(7)
 queue.dequeue()
-console.log(queue)
+console.log(queue.size())
