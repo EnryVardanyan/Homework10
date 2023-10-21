@@ -11,6 +11,15 @@ class Queue {
         this.items.shift()
         return sliced
     }
+    front(){
+        return this.items[0]
+    }
+    isEmpty(){
+        return !this.items.length
+    }
+    size(){
+        return this.items.length
+    }
 }
 const queue = new Queue()
 queue.enqueue(6)
